@@ -53,6 +53,18 @@ main {
   position: relative;
 }
 
+.hero-banner,
+.hero-avatar {
+  position: absolute;
+  display: none;
+}
+
+.hero-avatar {
+  background: var(--foto, none) center/cover;
+  border: 0.25rem solid var(--bg2);
+  border-radius: 50%;
+}
+
 h1 {
   font-family: var(--titulo);
   font-weight: var(--peso);
@@ -131,4 +143,49 @@ h2 {
   padding: 0 0.4rem 0.4rem;
   font-size: 0.92rem;
   opacity: 0.85;
+}
+
+[data-layout="classic"] .hero {
+  aspect-ratio: auto;
+  min-height: 14rem;
+  padding-top: 6.5rem;
+  background: linear-gradient(var(--bg2), transparent);
+}
+
+[data-layout="classic"] .hero::before {
+  display: none;
+}
+
+[data-layout="classic"] .hero-avatar {
+  display: block;
+  top: 1.5rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+[data-layout="banner"] .hero {
+  aspect-ratio: auto;
+  min-height: 18rem;
+  padding-top: 9rem;
+  padding-bottom: 0.75rem;
+  background: transparent;
+}
+
+[data-layout="banner"] .hero::before {
+  display: none;
+}
+
+[data-layout="banner"] .hero-banner {
+  display: block;
+  inset: 0 0 auto;
+  height: 9rem;
+  background: var(--banner, none) center/cover;
+}
+
+[data-layout="banner"] .hero-avatar {
+  display: block;
+  top: 6.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  z-index: 1;
 }
