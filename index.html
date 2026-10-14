@@ -29,7 +29,10 @@ const root = document.documentElement;
 const asset = path => new URL(path, document.baseURI).href;
 const layouts = ["classic", "hero", "banner"];
 const layout = layouts.includes(P.layout) ? P.layout : "hero";
+const exibicao = P.exibicao === "carousel" ? "carousel" : "grid";
+const grupos = P.grupos || [{ titulo: "Meus negócios", secoes: P.secoes || [] }];
 root.dataset.layout = layout;
+root.dataset.exibicao = exibicao;
 root.dataset.tema = new URLSearchParams(location.search).get("tema") || P.tema;
 root.style.setProperty("--foto", `url("${asset(P.foto)}")`);
 root.style.setProperty("--banner", `url("${asset(P.banner || P.foto)}")`);
@@ -46,11 +49,17 @@ const ic = r => `<a class="ic" href="${r.url}" target="_blank" rel="noopener nor
 
 $("#nome").textContent = P.nome;
 $("#redes").innerHTML = P.redes.map(ic).join("");
-$("#secoes").innerHTML = P.secoes.map(s => `
-  <section class="secao">
+const renderSecao = s => `
+  <article class="secao">
     <div class="capa" style="--img:url('${asset(s.imagem)}')"></div>
-    <div class="info"><h2>${s.titulo}</h2><div class="redes">${s.redes.map(ic).join("")}</div></div>
+    <div class="info"><h3>${s.titulo}</h3><div class="redes">${s.redes.map(ic).join("")}</div></div>
     ${s.texto ? `<p>${s.texto}</p>` : ""}
+  </article>`;
+
+$("#secoes").innerHTML = grupos.map(g => `
+  <section class="grupo">
+    <h2>${g.titulo}</h2>
+    <div class="secoes">${g.secoes.map(renderSecao).join("")}</div>
   </section>`).join("");
 </script>
 </body>

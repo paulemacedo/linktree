@@ -102,8 +102,21 @@ h1 {
   outline-offset: 2px;
 }
 
+.grupo {
+  margin: 1.5rem 1rem 0;
+}
+
+.grupo > h2 {
+  margin: 0 0 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.secoes {
+  display: grid;
+  gap: 1rem;
+}
+
 .secao {
-  margin: 1rem 1rem 0;
   padding: 0.6rem;
   border-radius: var(--raio);
   background: var(--card);
@@ -133,7 +146,8 @@ h1 {
   padding: 0.5rem 0.4rem 0;
 }
 
-h2 {
+.grupo h2,
+h3 {
   font-family: var(--titulo);
   font-weight: var(--peso);
   font-size: 1.3rem;
@@ -188,4 +202,37 @@ h2 {
   width: 5.5rem;
   height: 5.5rem;
   z-index: 1;
+}
+
+[data-exibicao="carousel"] .secoes {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0.1rem 0.25rem 0.75rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+[data-exibicao="carousel"] .secao {
+  flex: 0 0 min(85vw, 22rem);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 48rem) {
+  main {
+    max-width: 64rem;
+  }
+
+  .hero {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .secoes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-exibicao="carousel"] .secoes {
+    grid-template-columns: none;
+  }
 }
