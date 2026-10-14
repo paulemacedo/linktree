@@ -1,0 +1,56 @@
+/* Cada tema é só um bloco de variáveis. Copie um, mude o nome e os valores,
+   e use em config.js (tema: "novo") ou na URL (?tema=novo). */
+:root,
+[data-tema="dhampir"] {
+  --bg: #140f22;
+  --bg2: #2d2347;
+  --texto: #ede6da;
+  --suave: #a79fba;
+  --destaque: #e2a487;
+  --card: rgba(60, 46, 95, 0.45);
+  --card-texto: #ede6da;
+  --borda: rgba(255, 255, 255, 0.12);
+  --blur: 18px;
+  --raio: 1.4rem;
+  --brilho-fundo: 0.4;
+  --peso: 800;
+  --titulo: "Oxanium", sans-serif;
+  --corpo: "Instrument Sans", system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+[data-tema="bronze"] {
+  --bg: #0a0706;
+  --bg2: #3b2a1f;
+  --texto: #efe3d6;
+  --suave: #b79b83;
+  --destaque: #d2a98a;
+  --card: linear-gradient(120deg, rgba(246, 238, 230, 0.93), rgba(196, 166, 138, 0.93));
+  --card-texto: #4a3626;
+  --borda: rgba(255, 255, 255, 0.3);
+  --blur: 10px;
+  --raio: 1.6rem;
+  --brilho-fundo: 0.3;
+  --peso: 400;
+  --titulo: "Marcellus", serif;
+  --corpo: "Instrument Sans", system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+[data-tema="creme"] {
+  --bg: #f5efea;
+  --bg2: #e6d9cc;
+  --texto: #4b3a1f;
+  --suave: #8a7455;
+  --destaque: #8a6a3b;
+  --card: rgba(255, 255, 255, 0.55);
+  --card-texto: #4b3a1f;
+  --borda: rgba(138, 106, 59, 0.22);
+  --blur: 16px;
+  --raio: 1.6rem;
+  --brilho-fundo: 0.5;
+  --peso: 400;
+  --titulo: "Marcellus", serif;
+  --corpo: "Instrument Sans", system-ui, sans-serif;
+  color-scheme: light;
+}

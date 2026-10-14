@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+  font-family: var(--corpo);
+  line-height: 1.5;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* fundo: a própria foto, bem desfocada */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -15%;
+  z-index: -1;
+  background: var(--foto, none) center/cover;
+  filter: blur(64px) saturate(1.3);
+  opacity: var(--brilho-fundo);
+}
+
+main {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+}
+
+.hero {
+  position: relative;
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1.25rem 1.25rem;
+  background: linear-gradient(var(--bg2), transparent);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--foto, none) center top/cover;
+  -webkit-mask-image: linear-gradient(#000 50%, transparent);
+  mask-image: linear-gradient(#000 50%, transparent);
+}
+
+.hero > * {
+  position: relative;
+}
+
+h1 {
+  font-family: var(--titulo);
+  font-weight: var(--peso);
+  font-size: clamp(1.3rem, 6vw, 1.7rem);
+  color: var(--destaque);
+}
+
+.redes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.ic {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  color: var(--destaque);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.ic svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.ic:hover {
+  background: var(--borda);
+}
+
+.ic:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.secao {
+  margin: 1rem 1rem 0;
+  padding: 0.6rem;
+  border-radius: var(--raio);
+  background: var(--card);
+  color: var(--card-texto);
+  border: 1px solid var(--borda);
+  -webkit-backdrop-filter: blur(var(--blur));
+  backdrop-filter: blur(var(--blur));
+}
+
+.secao .ic {
+  color: inherit;
+}
+
+.capa {
+  --img: none;
+  aspect-ratio: 16/9;
+  border-radius: calc(var(--raio) - 0.5rem);
+  background: var(--img) center/cover,
+    linear-gradient(135deg, var(--bg2), var(--destaque));
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.4rem 0;
+}
+
+h2 {
+  font-family: var(--titulo);
+  font-weight: var(--peso);
+  font-size: 1.3rem;
+}
+
+.secao p {
+  padding: 0 0.4rem 0.4rem;
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
