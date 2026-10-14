@@ -198,15 +198,74 @@ h3 {
 
 [data-layout="banner"] .hero-avatar {
   display: block;
-  top: 7.25rem;
+  top: 6.25rem;
   width: 6rem;
   height: 6rem;
   z-index: 1;
 }
 
 @media (min-width: 48rem) {
+  body {
+    padding: 1.5rem 0;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  main {
+    position: relative;
+    width: min(100% - 3rem, 48rem);
+    max-width: 48rem;
+    min-height: calc(100vh - 3rem);
+    border-radius: 1.5rem 1.5rem 0 0;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+  }
+
+  main::before {
+    content: "";
+    position: absolute;
+    inset: -2rem;
+    z-index: 0;
+    background: var(--foto, none) center/cover;
+    filter: blur(64px) saturate(1.3);
+    opacity: var(--brilho-fundo);
+  }
+
+  main > * {
+    position: relative;
+    z-index: 1;
+  }
+
   [data-layout="banner"] .hero {
-    max-width: 36rem;
+    max-width: none;
+  }
+
+  .hero {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  [data-layout="banner"] .hero-banner {
+    height: 12rem;
+  }
+
+  [data-layout="banner"] .hero {
+    min-height: 21.5rem;
+    padding-top: 13rem;
+  }
+
+  [data-layout="banner"] .hero-avatar {
+    top: 9.25rem;
+  }
+
+  .secoes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-exibicao="carousel"] .secoes {
+    grid-template-columns: none;
   }
 }
 
@@ -222,23 +281,4 @@ h3 {
 [data-exibicao="carousel"] .secao {
   flex: 0 0 min(85vw, 22rem);
   scroll-snap-align: start;
-}
-
-@media (min-width: 48rem) {
-  main {
-    max-width: 64rem;
-  }
-
-  .hero {
-    max-width: 30rem;
-    margin: 0 auto;
-  }
-
-  .secoes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  [data-exibicao="carousel"] .secoes {
-    grid-template-columns: none;
-  }
 }

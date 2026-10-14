@@ -6,7 +6,7 @@ window.PERFIL = {
   tema: "dhampir",            // dhampir | bronze | creme (ou crie em themes.css)
   nome: "@DHAMPIRKID",
   foto: "assets/images/perfil.png",
-  banner: "assets/images/perfil.png",
+  banner: "assets/images/banner.png",
   redes: [
     { tipo: "whatsapp",  url: "https://wa.me/5521969079474" },
     { tipo: "instagram", url: "https://instagram.com/dhampirkid" },
