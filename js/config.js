@@ -1,7 +1,7 @@
 // Edite só este arquivo para mudar conteúdo e tema.
 // Pré-visualizar outro tema sem editar: adicione ?tema=bronze na URL.
 window.PERFIL = {
-  layout: "banner",            // classic | hero | banner
+  layout: "hero",            // classic | hero | banner
   exibicao: "grid",          // grid | carousel
   tema: "dhampir",            // dhampir | bronze | creme (ou crie em themes.css)
   nome: "@DHAMPIRKID",
