@@ -179,8 +179,8 @@ h3 {
 
 [data-layout="banner"] .hero {
   aspect-ratio: auto;
-  min-height: 18rem;
-  padding-top: 9rem;
+  min-height: 19.5rem;
+  padding-top: 10rem;
   padding-bottom: 0.75rem;
   background: transparent;
 }
@@ -198,10 +198,16 @@ h3 {
 
 [data-layout="banner"] .hero-avatar {
   display: block;
-  top: 6.5rem;
-  width: 5.5rem;
-  height: 5.5rem;
+  top: 7.25rem;
+  width: 6rem;
+  height: 6rem;
   z-index: 1;
+}
+
+@media (min-width: 48rem) {
+  [data-layout="banner"] .hero {
+    max-width: 36rem;
+  }
 }
 
 [data-exibicao="carousel"] .secoes {
