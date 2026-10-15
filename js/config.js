@@ -11,6 +11,9 @@ window.PERFIL = {
   nome: "@DHAMPIRKID",
   foto: "assets/images/perfil.png",
   banner: "assets/images/banner.png",
+  og: { 
+    fundo: "solido" 
+  },   // blur (banner desfocado) | imagem (banner puro) | solido (cor do tema)
   redes: [
     { tipo: "whatsapp",  url: "https://wa.me/5521969079474" },
     { tipo: "instagram", url: "https://instagram.com/dhampirkid" },
