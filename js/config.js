@@ -3,7 +3,10 @@
 window.PERFIL = {
   layout: "hero",            // classic | hero | banner
   exibicao: "grid",          // grid | carousel
-  tema: "dhampir",            // dhampir | bronze | creme (ou crie em themes.css)
+  tema: "dhampir",           // dhampir | bronze | creme (ou crie em themes.css)
+  icones: "traco",           // traco | preenchido | bolha
+  cards: "vidro",            // vidro | solido | contorno | lista
+  fundo: "foto-blur",        // foto-blur | gradiente | solido
   nome: "@DHAMPIRKID",
   foto: "assets/images/perfil.png",
   banner: "assets/images/banner.png",

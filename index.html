@@ -33,19 +33,21 @@ const exibicao = P.exibicao === "carousel" ? "carousel" : "grid";
 const grupos = P.grupos || [{ titulo: "Meus negócios", secoes: P.secoes || [] }];
 root.dataset.layout = layout;
 root.dataset.exibicao = exibicao;
+const eixo = (nome, validos, padrao) => {
+  const v = new URLSearchParams(location.search).get(nome) || P[nome];
+  root.dataset[nome] = validos.includes(v) ? v : padrao;
+};
+eixo("icones", ["traco", "preenchido", "bolha"], "traco");
+eixo("cards", ["vidro", "solido", "contorno", "lista"], "vidro");
+eixo("fundo", ["foto-blur", "gradiente", "solido"], "foto-blur");
+const estilo = root.dataset.icones;
+root.dataset.icones = estilo;
 root.dataset.tema = new URLSearchParams(location.search).get("tema") || P.tema;
 root.style.setProperty("--foto", `url("${asset(P.foto)}")`);
 root.style.setProperty("--banner", `url("${asset(P.banner || P.foto)}")`);
 document.title = P.nome;
 
-const I = {
-  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/>',
-  whatsapp: '<path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.5z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/>',
-  tiktok: '<path d="M15 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M15 3c.3 2.2 1.8 3.8 4 4"/>',
-  spotify: '<circle cx="12" cy="12" r="9"/><path d="M7.5 9.5c3.2-1 6.5-.8 9.2.4M8 12.2c2.7-.8 5.5-.6 7.8.4M8.7 14.8c2.1-.5 4.2-.3 6 .4"/>',
-  link: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>'
-};
-const ic = r => `<a class="ic" href="${r.url}" target="_blank" rel="noopener noreferrer" aria-label="${r.tipo}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${I[r.tipo] || I.link}</svg></a>`;
+const ic = r => `<a class="ic" href="${r.url}" target="_blank" rel="noopener noreferrer" aria-label="${r.tipo}"><span class="ico" style="--ico:url('${asset(`assets/icons/${estilo}/${r.tipo}.svg`)}')"></span></a>`;
 
 $("#nome").textContent = P.nome;
 $("#redes").innerHTML = P.redes.map(ic).join("");

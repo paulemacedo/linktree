@@ -98,9 +98,12 @@ h1 {
   transition: background 0.15s;
 }
 
-.ic svg {
+.ico {
   width: 2rem;
   height: 2rem;
+  background: currentColor;
+  -webkit-mask: var(--ico) center / contain no-repeat;
+  mask: var(--ico) center / contain no-repeat;
 }
 
 .ic:hover {
@@ -297,4 +300,58 @@ h3 {
 [data-exibicao="carousel"] .secao {
   flex: 0 0 min(85vw, 22rem);
   scroll-snap-align: start;
+}
+
+/* cards */
+[data-cards="solido"] .secao {
+  background: var(--bg2);
+  color: var(--texto);
+  border-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+[data-cards="contorno"] .secao {
+  background: transparent;
+  color: var(--texto);
+  border: 1.5px solid var(--destaque);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+[data-cards="lista"] .secao {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0 0.75rem;
+  align-items: center;
+}
+
+[data-cards="lista"] .capa {
+  aspect-ratio: 1;
+  grid-row: 1 / span 2;
+}
+
+[data-cards="lista"] .info {
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+[data-cards="lista"] .secao p {
+  grid-column: 2;
+  padding: 0;
+}
+
+/* fundo */
+[data-fundo="gradiente"] body::before,
+[data-fundo="gradiente"] main::before {
+  background:
+    radial-gradient(70% 45% at 50% 0%, var(--destaque), transparent 70%),
+    linear-gradient(var(--bg2), var(--bg));
+  filter: none;
+  opacity: 0.5;
+}
+
+[data-fundo="solido"] body::before,
+[data-fundo="solido"] main::before {
+  display: none;
 }

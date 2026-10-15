@@ -114,3 +114,10 @@ linktree/
 ## Como executar
 
 Abra o arquivo [`index.html`](index.html) diretamente no navegador ou use uma extensão de servidor local, como o Live Server do VS Code.
+
+
+## Ideias de melhorias e Implementações
+- [ ] Adicionar suporte a mais redes sociais
+- [ ] Adicionar suporte a mais layouts
+- [ ] Adicionar suporte a mais temas
+- [ ] Adicionar suporte a player de música
