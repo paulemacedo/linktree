@@ -53,6 +53,16 @@ main {
   position: relative;
 }
 
+[data-layout="hero"] .hero {
+  justify-content: flex-start;
+  padding-top: 75%;
+}
+
+[data-layout="hero"] .hero h1,
+[data-layout="hero"] .hero .redes {
+  transform: translateY(2rem);
+}
+
 .hero-banner,
 .hero-avatar {
   position: absolute;
@@ -180,7 +190,8 @@ h3 {
 [data-layout="banner"] .hero {
   aspect-ratio: auto;
   min-height: 19.5rem;
-  padding-top: 10rem;
+  justify-content: flex-start;
+  padding-top: 9.35rem;
   padding-bottom: 0.75rem;
   background: transparent;
 }
@@ -198,10 +209,15 @@ h3 {
 
 [data-layout="banner"] .hero-avatar {
   display: block;
-  top: 6.25rem;
+  top: 2.75rem;
   width: 6rem;
   height: 6rem;
   z-index: 1;
+}
+
+[data-layout="banner"] .hero h1,
+[data-layout="banner"] .hero .redes {
+  z-index: 2;
 }
 
 @media (min-width: 48rem) {
@@ -253,11 +269,11 @@ h3 {
 
   [data-layout="banner"] .hero {
     min-height: 21.5rem;
-    padding-top: 13rem;
+    padding-top: 12.35rem;
   }
 
   [data-layout="banner"] .hero-avatar {
-    top: 9.25rem;
+    top: 5.75rem;
   }
 
   .secoes {
