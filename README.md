@@ -118,6 +118,9 @@ Abra o arquivo [`index.html`](index.html) diretamente no navegador ou use uma ex
 
 ## Ideias de melhorias e Implementações
 - [ ] Adicionar suporte a mais redes sociais
-- [ ] Adicionar suporte a mais layouts
-- [ ] Adicionar suporte a mais temas
+- [x] Adicionar suporte a mais layouts
+- [x] Adicionar suporte a mais temas
 - [ ] Adicionar suporte a player de música
+- [ ] Adicionar internalização (i18n)
+  - [ ] Adicionar suporte a inglês
+  - [ ] Adicionar suporte a espanhol
