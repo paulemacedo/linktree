@@ -39,8 +39,9 @@ window.PERFIL = {
           texto: "",
           redes: [
             { tipo: "whatsapp",  url: "https://wa.me/5521972592555" },
-            { tipo: "tiktok",    url: "https://tiktok.com/@vatesvesperion" },
-            { tipo: "instagram", url: "https://instagram.com/vatesvesperion" }
+            { tipo: "instagram", url: "https://instagram.com/vatesvesperion" },
+            { tipo: "tiktok",    url: "https://tiktok.com/@vatesvesperion" }
+
           ]
         }
       ]
