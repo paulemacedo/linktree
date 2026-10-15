@@ -1,0 +1,12 @@
+{
+  "name": "dhampirkid-linktree",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "og": "node scripts/gerar-og.mjs"
+  },
+  "devDependencies": {
+    "opentype.js": "^2.0.0",
+    "sharp": "^0.35.5"
+  }
+}
