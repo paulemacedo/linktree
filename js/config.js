@@ -18,7 +18,7 @@ window.PERFIL = {
     { tipo: "whatsapp",  url: "https://wa.me/5521969079474" },
     { tipo: "instagram", url: "https://instagram.com/dhampirkid" },
     { tipo: "tiktok",    url: "https://tiktok.com/@dhampirkid" },
-    { tipo: "spotify",   url: "https://open.spotify.com/user/31g0q3x1j6y7k2v5z8f4b9c" }
+    { tipo: "spotify",   url: "https://open.spotify.com/user/12182915101" }
   ],
   grupos: [
     {
