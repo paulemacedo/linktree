@@ -6,6 +6,7 @@ window.PERFIL = {
   tema: "dhampir",           // dhampir | bronze | creme (ou crie em themes.css)
   icones: "traco",           // traco | preenchido | bolha
   cards: "vidro",            // vidro | solido | contorno | lista
+  hover: "balanco",            // fundo | salto | brilho | balanco
   fundo: "foto-blur",        // foto-blur | gradiente | solido
   nome: "@DHAMPIRKID",
   foto: "assets/images/perfil.png",

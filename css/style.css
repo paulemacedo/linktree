@@ -355,3 +355,40 @@ h3 {
 [data-fundo="solido"] main::before {
   display: none;
 }
+
+.ic {
+  transition: background 0.15s,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s;
+}
+
+@keyframes balanco {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-14deg) scale(1.1); }
+  75% { transform: rotate(14deg) scale(1.1); }
+}
+
+@media (hover: hover) {
+  [data-hover="salto"] .ic:hover {
+    transform: translateY(-4px) scale(1.12);
+  }
+
+  [data-hover="brilho"] .ic:hover {
+    background: transparent;
+    box-shadow: 0 0 1.25rem var(--destaque), inset 0 0 0.5rem var(--borda);
+  }
+
+  [data-hover="balanco"] .ic:hover .ico {
+    animation: balanco 0.5s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ic { transition: none; }
+
+  [data-hover] .ic:hover,
+  [data-hover] .ic:hover .ico {
+    transform: none;
+    animation: none;
+  }
+}
