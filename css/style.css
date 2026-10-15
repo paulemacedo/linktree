@@ -172,6 +172,13 @@ h3 {
   opacity: 0.85;
 }
 
+.rodape {
+  padding: 2rem 1rem 1.5rem;
+  color: var(--suave);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
 [data-layout="classic"] .hero {
   aspect-ratio: auto;
   min-height: 14rem;
