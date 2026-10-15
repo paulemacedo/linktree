@@ -145,17 +145,26 @@ linktree/
 
 Use um servidor local, como o Live Server do VS Code ou `npx serve`. Abrir o `index.html` direto pelo navegador (`file://`) não funciona direito, porque os ícones são carregados por máscara CSS e o navegador bloqueia isso em arquivos locais.
 
+## Gerar imagens Open Graph
+
+Para gerar as imagens Open Graph, execute os seguintes comandos:
+
+```bash
+run npm install
+npm run og
+```
+
 ## Publicação
 
 O projeto é um site estático. No Vercel, importe o repositório sem framework e sem comando de build. Cada push publica uma nova versão.
 
-## Créditos
+<!-- ## Créditos
 
 Os ícones vêm do [SVG Repo](https://www.svgrepo.com). Cada conjunto tem sua própria licença, então liste aqui o autor e a licença de cada um:
 
 - Traço: _autor e licença_
 - Preenchido: _autor e licença_
-- Bolha: _autor e licença_
+- Bolha: _autor e licença_ -->
 
 ## Ideias de melhorias e Implementações
 
